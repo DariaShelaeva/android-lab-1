@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "489044680194",
+    "project_id": "phone-rating",
+    "storage_bucket": "phone-rating.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489044680194:android:dee24ba12a281c2676511b",
+        "android_client_info": {
+          "package_name": "com.example.labone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489044680194-8o1rrajfuis4hj8btvcjfm7b6mbfdki5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9HajBhrBXu23mCkp4i8uNZv3iRbeqGiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489044680194-8o1rrajfuis4hj8btvcjfm7b6mbfdki5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
