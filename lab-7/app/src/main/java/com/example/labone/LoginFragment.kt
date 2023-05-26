@@ -48,7 +48,6 @@ class LoginFragment : Fragment() {
         val navController = NavHostFragment.findNavController(this)
 
         val phoneListId = R.id.first_fragment
-        val registrationId = R.id.registration_fragment
 
         val loginField = root.findViewById<EditText>(R.id.field_login)
         val passwordField = root.findViewById<EditText>(R.id.field_password)
@@ -56,10 +55,6 @@ class LoginFragment : Fragment() {
         val checkboxAutoAuth = root.findViewById<CheckBox>(R.id.check_auto_login)
 
         val preferences = context.getSharedPreferences("auth", Context.MODE_PRIVATE)
-        val login = preferences.getString("login", null)
-        val password = preferences.getString("password", null)
-        val phoneRegex = "^[+]7\\d{10}\$".toRegex()
-
         val firebaseAuth = FirebaseAuth.getInstance()
 
         fun loginUser() {
@@ -74,18 +69,11 @@ class LoginFragment : Fragment() {
             }
         }
 
-        // Если почему-то нет данных, то переходим обратно на регистрацию
-        if (login == null || password == null) {
-            Toast.makeText(context, "Ошибка авторизации", Toast.LENGTH_SHORT).show()
-            navController.navigate(registrationId)
-            return root
-        }
-
-        // Если при регистрации был телефон, то меняет тип инпута
-        if (phoneRegex.matches(login)) {
-            loginField.hint = "+7"
-            loginField.inputType = InputType.TYPE_CLASS_PHONE
-        }
+        // Раньше проверяли логин, но теперь неактуально
+//        if (phoneRegex.matches(login)) {
+//            loginField.hint = "+7"
+//            loginField.inputType = InputType.TYPE_CLASS_PHONE
+//        }
 
         confirmButton.setOnClickListener {
             loginUser()
